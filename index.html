@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Mat Fuel: Diet Plans</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ctext y=%27.9em%27 font-size=%2790%27%3E%F0%9F%A5%8B%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#eef2f6;--surface:#fff;--text:#101e2c;--muted:#566677;--accent:#1f4fbf;--accent-ink:#fff;--accent-soft:#dde7fa;--border:#d5dde6;--stripe:#f2b02e;color-scheme:light;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0c141d;--surface:#142130;--text:#e8eef5;--muted:#94a6b8;--accent:#6c9bff;--accent-ink:#0b1424;--accent-soft:#1b2f52;--border:#243448;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0c141d;--surface:#142130;--text:#e8eef5;--muted:#94a6b8;--accent:#6c9bff;--accent-ink:#0b1424;--accent-soft:#1b2f52;--border:#243448;color-scheme:dark}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--text);font:400 16px/1.5 'Barlow',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:30}
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;display:flex;align-items:center;justify-content:space-between;padding:12px 18px;background:var(--bg);border-bottom:4px solid var(--stripe)}
+.brand{font:700 26px/1 'Barlow Condensed','Barlow',system-ui,sans-serif;letter-spacing:.03em;color:var(--text);text-decoration:none}
+.menu{position:relative}
+#menuBtn{font:600 15px 'Barlow',system-ui,sans-serif;display:flex;gap:8px;align-items:center;padding:9px 14px;border-radius:999px;border:1px solid var(--border);background:var(--surface);color:var(--text);cursor:pointer}
+#menuBtn svg{width:12px;height:12px;transition:transform .15s}
+#menuBtn[aria-expanded=true] svg{transform:rotate(180deg)}
+#menuList{position:absolute;right:0;top:calc(100% + 8px);min-width:200px;background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:6px;box-shadow:0 12px 30px rgba(8,20,40,.18)}
+#menuList a{display:block;padding:11px 14px;border-radius:9px;color:var(--text);text-decoration:none;font-weight:500}
+#menuList a:hover{background:var(--accent-soft)}
+#menuList a[aria-current=page]{background:var(--accent-soft);color:var(--accent);font-weight:600}
+a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+main{max-width:760px;margin:0 auto;padding:24px 18px 56px}
+h1{margin:0 0 6px;font:700 clamp(40px,10vw,64px)/.95 'Barlow Condensed','Barlow',system-ui,sans-serif;text-transform:uppercase;letter-spacing:.015em}
+h2{margin:22px 0 8px;font:700 24px/1.1 'Barlow Condensed','Barlow',system-ui,sans-serif;letter-spacing:.02em}
+.lead{color:var(--muted);margin:0 0 18px;max-width:60ch}
+.seg{display:flex;gap:6px;flex-wrap:wrap;margin:0 0 16px}
+.seg button{font:600 15px 'Barlow',system-ui,sans-serif;padding:9px 14px;border-radius:999px;border:1px solid var(--border);background:var(--surface);color:var(--text);cursor:pointer}
+.seg button[aria-pressed=true]{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:0 0 18px}
+@media (max-width:520px){.stats{grid-template-columns:repeat(2,1fr)}}
+.stat{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:12px 14px}
+.stat b{display:block;font:700 34px/1 'Barlow Condensed','Barlow',system-ui,sans-serif}
+.stat span{color:var(--muted);font-size:14px}
+.meal,.card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:14px 16px;margin:0 0 10px}
+.mh{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.time{font-weight:600;font-size:14px;background:var(--accent-soft);color:var(--accent);padding:2px 10px;border-radius:99px}
+.mh h3{margin:0;font:700 22px/1.1 'Barlow Condensed','Barlow',system-ui,sans-serif;letter-spacing:.02em}
+.mm{margin-left:auto;display:flex;gap:10px;color:var(--muted);font-size:14px}
+ul.items{margin:8px 0 0;padding:0;list-style:none}
+ul.items li{padding:3px 0}
+.q{font-weight:600;color:var(--accent)}
+.note{border-left:4px solid var(--stripe);background:var(--surface);border-radius:0 12px 12px 0;padding:12px 14px;margin:16px 0}
+.fine{color:var(--muted);font-size:14px}
+.row{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0 0}
+.btn{display:inline-block;font:600 15px 'Barlow',system-ui,sans-serif;padding:10px 16px;border-radius:999px;background:var(--accent);color:var(--accent-ink);text-decoration:none;border:1px solid var(--accent);cursor:pointer}
+.btn.ghost{background:transparent;color:var(--accent)}
+.chk{display:flex;gap:12px;align-items:center;padding:11px 2px;cursor:pointer;border-top:1px solid var(--border)}
+.chk:first-of-type{border-top:0}
+.chk input{width:22px;height:22px;accent-color:var(--accent);flex:none}
+.chk small{display:block;color:var(--muted);font-size:14px}
+.chk.on .l{text-decoration:line-through;color:var(--muted)}
+.sum{position:sticky;top:calc(env(safe-area-inset-top,0px) + 62px);z-index:5;background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:12px 16px;margin:0 0 14px}
+.sumtop{display:flex;justify-content:space-between;gap:10px;margin-bottom:8px}
+.bar{height:10px;background:var(--accent-soft);border-radius:99px;overflow:hidden}
+.bar i{display:block;height:100%;background:var(--accent);transition:width .25s}
+.chips{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px}
+.chips span{font-size:13px;background:var(--accent-soft);padding:2px 10px;border-radius:99px}
+.dates{display:flex;gap:8px;align-items:center;margin:0 0 14px;flex-wrap:wrap}
+input[type=date]{font:500 15px 'Barlow',system-ui,sans-serif;padding:8px 12px;border-radius:10px;border:1px solid var(--border);background:var(--surface);color:var(--text)}
+details{background:var(--surface);border:1px solid var(--border);border-radius:14px;margin:0 0 10px}
+summary{cursor:pointer;padding:14px 16px;font:700 21px/1.2 'Barlow Condensed','Barlow',system-ui,sans-serif;letter-spacing:.02em;display:flex;justify-content:space-between;gap:10px}
+summary small{font:400 14px 'Barlow',system-ui,sans-serif;color:var(--muted)}
+details>div{padding:0 16px 14px}
+details h4{margin:10px 0 4px;font-size:15px}
+details ul,details ol{margin:0;padding-left:20px}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<header class="top">
+  <a class="brand" href="#plans">Mat Fuel</a>
+  <div class="menu">
+    <button id="menuBtn" aria-haspopup="true" aria-expanded="false" aria-controls="menuList">Menu
+      <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 4l4 4 4-4"/></svg></button>
+    <nav id="menuList" hidden aria-label="Pages">
+      <a href="#plans">Diet plans</a><a href="#groceries">Groceries</a><a href="#recipes">Recipes</a><a href="#schedule">Schedule</a>
+    </nav>
+  </div>
+</header>
+<main id="app"></main>
+<script>
+const ITEMS={
+ mong:{n:'Monggo soup, 1 bowl (canteen)',p:9,c:20,f:7},
+ egg:{n:'Boiled egg',p:6,c:.5,f:5},
+ r1:{n:'Rice, 1 cup',p:4,c:45,f:0},
+ rh:{n:'Rice, ½ cup',p:2,c:23,f:0},
+ r34:{n:'Rice, ¾ cup',p:3,c:34,f:0},
+ chk:{n:'Chicken breast piece, fried in 1 tbsp oil',p:35,c:0,f:18},
+ cam:{n:'Camote, fist-sized, boiled',p:2,c:28,f:0},
+ tuna:{n:'Canned tuna in water, 1 can',p:28,c:1,f:1}
+};
+const BF=['7:00','Breakfast',[['mong',1],['egg',3],['rh',1]]];
+const LN=['12:00','Lunch',[['chk',1],['cam',2]]];
+const PLANS={
+ training:{label:'Training day',sub:'Week 4 onwards, 3 to 4 BJJ days a week.',
+  note:'Fry both chicken pieces in 1 tbsp of oil each. Skipping the oil cuts about 28 g of fat (roughly 250 kcal), so add 2 boiled eggs if you go oil-free.',
+  meals:[BF,LN,['17:00','Pre-workout',[['chk',1],['r1',1],['rh',1]]],['21:30','Dinner',[['tuna',1],['r1',1],['rh',1]]]]},
+ rest:{label:'Rest day',sub:'Same foods, fewer carbs so you stay lean.',
+  note:'Eat only the chicken piece at 5 pm (no rice) and have ¾ cup of rice at dinner.',
+  meals:[BF,LN,['17:00','Afternoon',[['chk',1]]],['21:30','Dinner',[['tuna',1],['r34',1]]]]},
+ ramp:{label:'Weeks 1 to 3',sub:'The 5-days-a-week ramp-up. Training days only.',
+  note:'Compared with a normal training day: 1 extra cup of rice at lunch, 1 camote at 5 pm and 1 extra boiled egg at dinner.',
+  meals:[BF,['12:00','Lunch',[['chk',1],['cam',2],['r1',1]]],['17:00','Pre-workout',[['chk',1],['r1',1],['rh',1],['cam',1]]],['21:30','Dinner',[['tuna',1],['r1',1],['rh',1],['egg',1]]]]}
+};
+const GROC=[
+ ['Protein',[['chk','Chicken breast, boneless and skinless','7 whole breasts (14 pieces)'],['tuna','Canned tuna in water','7 cans'],['egg','Eggs','21 (about ¾ of a tray)']]],
+ ['Carbs',[['rice','White rice','about 1.5 kg'],['cam','Camote','about 2 kg (14 fist-sized)']]],
+ ['Pantry',[['oil','Cooking oil','about 250 ml'],['salt','Salt','1 pack'],['aro','Onion and ginger','for boiling chicken'],['cal','Calamansi or soy sauce','for the tuna rice']]],
+ ['Canteen',[['mong','Monggo soup','1 bowl each morning, 7 bowls']]]
+];
+const RECIPES=[
+ ['Fried chicken breast piece','12 min','Keeps 2 days in the fridge',['1 piece chicken breast (half a breast)','1 tbsp cooking oil','Salt','Calamansi (optional)'],['Cut a thick piece in half sideways so it cooks evenly. Pat dry and salt it.','Heat the oil in a pan on medium heat.','Fry 4 to 5 minutes per side until golden with no pink inside.','Rest 2 minutes, then squeeze calamansi over it.']],
+ ['Boiled chicken breast (batch of 4)','20 min','Keeps 3 days in its broth',['4 pieces chicken breast','1 tsp salt','½ onion','1 small piece of ginger','Water to cover'],['Boil the water with the salt, onion and ginger.','Add the chicken and simmer 12 to 15 minutes, until no pink is left.','Turn off the heat and let it rest in the broth for 5 minutes.','Use the oil-free version when you skip frying.']],
+ ['Boiled eggs (batch of 6)','12 min','Keeps 7 days in the shell',['6 eggs','Water to cover'],['Cover the eggs with water and bring to a boil.','Once boiling, cook 10 minutes.','Cool in cold water, then peel when needed.']],
+ ['Boiled camote (batch of 6)','25 min','Keeps 3 to 4 days',['6 fist-sized camote','Water to cover'],['Wash and cut into big chunks (peel if you like).','Boil 15 to 20 minutes until a fork slides in easily.','Drain and store. Reheat in a pan or eat cold.']],
+ ['Rice for the week','25 min','Keeps 3 days in the fridge',['3 cups uncooked rice (about 9 cups cooked)','Water'],['Cook as usual, then spread it out to cool.','Refrigerate within an hour in a closed container.','Reheat with a splash of water until steaming hot.']],
+ ['No-cook tuna rice bowl (dinner)','3 min','Eat right away',['1 can tuna in water','1½ cups cooked rice','Calamansi or soy sauce','Salt'],['Reheat the rice.','Drain the tuna and flake it over the rice.','Season with calamansi or soy sauce and a pinch of salt.']],
+ ['Ordering the canteen monggo','1 min','Buy fresh each morning',['1 bowl monggo soup','½ cup rice (bring your own or buy a half portion)'],['Ask for “damo og monggo, gamay sabaw” (more beans, less broth).','If it looks watery, add a small extra scoop of rice or a 4th boiled egg.','Boil your eggs the night before and bring them with you.']]
+];
+const $=s=>document.querySelector(s);
+const store={get(k,d){try{const v=localStorage.getItem(k);return v?JSON.parse(v):d}catch(e){return d}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}};
+const todayISO=()=>{const d=new Date();d.setMinutes(d.getMinutes()-d.getTimezoneOffset());return d.toISOString().slice(0,10)};
+const S={type:store.get('dp_type','training'),date:todayISO(),sched:store.get('dp_sched',{}),groc:store.get('dp_groc',{})};
+if(!PLANS[S.type])S.type='training';
+const r=n=>Math.round(n);
+const mealTot=it=>{let p=0,c=0,f=0;it.forEach(([k,q])=>{const i=ITEMS[k];p+=i.p*q;c+=i.c*q;f+=i.f*q});return{p,c,f,k:p*4+c*4+f*9}};
+const planTot=pl=>{const a={p:0,c:0,f:0,k:0};pl.meals.forEach(m=>{const t=mealTot(m[2]);for(const x in a)a[x]+=t[x]});return a};
+const seg=()=>`<div class="seg" role="group" aria-label="Day type">${Object.entries(PLANS).map(([k,v])=>`<button data-type="${k}" aria-pressed="${k===S.type}">${v.label}</button>`).join('')}</div>`;
+const rowsOf=pl=>{const out=[];pl.meals.forEach((m,mi)=>m[2].forEach(([k,q])=>{for(let i=1;i<=q;i++)out.push({mi,k,id:mi+'-'+k+'-'+i,label:ITEMS[k].n+(q>1?` (${i} of ${q})`:'')})}));return out};
+const cur=()=>{const pl=PLANS[S.type],key=S.date+'|'+S.type;return{pl,key,d:S.sched[key]||{},R:rowsOf(pl)}};
+
+function sumHTML(){const{pl,d,R}=cur();const T=planTot(pl);const e={p:0,c:0,f:0};let n=0;
+ R.forEach(x=>{if(d[x.id]){const i=ITEMS[x.k];e.p+=i.p;e.c+=i.c;e.f+=i.f;n++}});const k=e.p*4+e.c*4+e.f*9;
+ return `<div class="sumtop"><b>${n} of ${R.length} eaten</b><span>${r(k)} of ${r(T.k)} kcal</span></div><div class="bar"><i style="width:${Math.min(100,k/T.k*100)}%"></i></div><div class="chips"><span>Protein ${r(e.p)} / ${r(T.p)} g</span><span>Carbs ${r(e.c)} / ${r(T.c)} g</span><span>Fat ${r(e.f)} / ${r(T.f)} g</span></div>`}
+
+const V={
+plans(){const pl=PLANS[S.type],T=planTot(pl);
+ return `<h1>Diet plans</h1><p class="lead">Chicken breast, canned tuna, boiled eggs, camote, white rice and canteen monggo. Everything is fried or boiled, built for an evening class around 7 to 9 pm.</p>${seg()}
+ <p class="fine">${pl.sub}</p>
+ <div class="stats"><div class="stat"><b>${r(T.k)}</b><span>calories</span></div><div class="stat"><b>${r(T.p)} g</b><span>protein</span></div><div class="stat"><b>${r(T.c)} g</b><span>carbs</span></div><div class="stat"><b>${r(T.f)} g</b><span>fat</span></div></div>
+ ${pl.meals.map(m=>{const t=mealTot(m[2]);return `<article class="meal"><div class="mh"><span class="time">${m[0]}</span><h3>${m[1]}</h3><span class="mm"><span>P ${r(t.p)}</span><span>C ${r(t.c)}</span><span>F ${r(t.f)}</span></span></div><ul class="items">${m[2].map(([k,q])=>`<li><span class="q">${q}×</span> ${ITEMS[k].n}</li>`).join('')}</ul></article>`}).join('')}
+ <div class="note">${pl.note}</div>
+ <p class="fine">Estimated cost: about ₱195 to ₱220 a day with the canteen soup. Macros are estimates, and canteen soup varies the most.</p>
+ <div class="row"><a class="btn" href="#schedule">Open schedule</a><a class="btn ghost" href="#groceries">Groceries</a><a class="btn ghost" href="#recipes">Recipes</a></div>`},
+
+groceries(){const all=GROC.flatMap(g=>g[1]);
+ return `<h1>Groceries</h1><p class="lead">One week of food (about 4 training days and 3 rest days). Tick each item as you buy it. Estimated total: ₱1,400 to ₱1,550.</p>
+ <div class="sum" id="gsum">${gSum()}</div>
+ ${GROC.map(([g,items])=>`<h2>${g}</h2><div class="card">${items.map(([id,n,q])=>`<label class="chk${S.groc[id]?' on':''}"><input type="checkbox" data-gid="${id}"${S.groc[id]?' checked':''}><span class="l">${n}<small>${q}</small></span></label>`).join('')}</div>`).join('')}
+ <div class="note">Weeks 1 to 3 (5 training days): add about ½ kg of rice, 1 kg of camote and 5 more eggs.</div>
+ <div class="row"><button class="btn ghost" data-act="gclear">Clear all ticks</button></div>`},
+
+recipes(){return `<h1>Recipes</h1><p class="lead">Fry or boil only. Cook in batches so every meal takes a few minutes.</p>
+ ${RECIPES.map(([t,time,keep,ing,steps])=>`<details><summary>${t}<small>${time}</small></summary><div><h4>You need</h4><ul>${ing.map(i=>`<li>${i}</li>`).join('')}</ul><h4>Steps</h4><ol>${steps.map(s=>`<li>${s}</li>`).join('')}</ol><p class="fine">${keep}</p></div></details>`).join('')}`},
+
+schedule(){const{pl,d,R}=cur();
+ return `<h1>Schedule</h1><p class="lead">Tick every piece of food as you eat it. Each day and day type is saved separately.</p>${seg()}
+ <div class="dates"><input type="date" id="dt" value="${S.date}" aria-label="Date"><button class="btn ghost" data-act="today">Today</button><button class="btn ghost" data-act="sclear">Clear this day</button></div>
+ <div class="sum" id="sum">${sumHTML()}</div>
+ ${pl.meals.map((m,mi)=>{const rr=R.filter(x=>x.mi===mi);return `<article class="meal"><div class="mh"><span class="time">${m[0]}</span><h3>${m[1]}</h3><span class="mm"><span class="mcount" data-mi="${mi}">${rr.filter(x=>d[x.id]).length}/${rr.length}</span></span></div>${rr.map(x=>{const i=ITEMS[x.k];return `<label class="chk${d[x.id]?' on':''}"><input type="checkbox" data-sid="${x.id}"${d[x.id]?' checked':''}><span class="l">${x.label}<small>P ${i.p} g, C ${i.c} g, F ${i.f} g</small></span></label>`}).join('')}</article>`}).join('')}`}
+};
+function gSum(){const all=GROC.flatMap(g=>g[1]),n=all.filter(x=>S.groc[x[0]]).length;
+ return `<div class="sumtop"><b>${n} of ${all.length} bought</b><span>${n===all.length?'All done':'Still to buy: '+(all.length-n)}</span></div><div class="bar"><i style="width:${n/all.length*100}%"></i></div>`}
+
+const TITLES={plans:'Diet plans',groceries:'Groceries',recipes:'Recipes',schedule:'Schedule'};
+function render(top){const h=(location.hash||'#plans').slice(1),v=V[h]?h:'plans';
+ $('#app').innerHTML=V[v]();document.title='Mat Fuel: '+TITLES[v];
+ document.querySelectorAll('#menuList a').forEach(a=>a.setAttribute('aria-current',a.hash==='#'+v?'page':'false'));
+ if(top)window.scrollTo(0,0)}
+window.addEventListener('hashchange',()=>render(true));
+
+const mb=$('#menuBtn'),ml=$('#menuList');
+const setMenu=o=>{ml.hidden=!o;mb.setAttribute('aria-expanded',String(o))};
+mb.addEventListener('click',e=>{e.stopPropagation();setMenu(ml.hidden)});
+document.addEventListener('click',e=>{if(!ml.hidden&&!ml.contains(e.target))setMenu(false)});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')setMenu(false)});
+ml.addEventListener('click',()=>setMenu(false));
+
+document.addEventListener('click',e=>{
+ const b=e.target.closest('[data-type],[data-act]');if(!b)return;
+ if(b.dataset.type){S.type=b.dataset.type;store.set('dp_type',S.type);render(false)}
+ else if(b.dataset.act==='today'){S.date=todayISO();render(false)}
+ else if(b.dataset.act==='sclear'){delete S.sched[cur().key];store.set('dp_sched',S.sched);render(false)}
+ else if(b.dataset.act==='gclear'){S.groc={};store.set('dp_groc',S.groc);render(false)}
+});
+document.addEventListener('change',e=>{const el=e.target;
+ if(el.id==='dt'){S.date=el.value||todayISO();render(false);return}
+ if(el.dataset.sid){const{key,R}=cur();const d=S.sched[key]||(S.sched[key]={});if(el.checked)d[el.dataset.sid]=1;else delete d[el.dataset.sid];
+  store.set('dp_sched',S.sched);el.closest('label').classList.toggle('on',el.checked);$('#sum').innerHTML=sumHTML();
+  document.querySelectorAll('.mcount').forEach(c=>{const rr=R.filter(x=>x.mi===+c.dataset.mi);c.textContent=rr.filter(x=>d[x.id]).length+'/'+rr.length})}
+ else if(el.dataset.gid){if(el.checked)S.groc[el.dataset.gid]=1;else delete S.groc[el.dataset.gid];
+  store.set('dp_groc',S.groc);el.closest('label').classList.toggle('on',el.checked);$('#gsum').innerHTML=gSum()}
+});
+render(false);
+</script>
+</body>
+</html>
